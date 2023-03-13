@@ -17,12 +17,13 @@ int main(){
     std::cin>>filename;
     std::ifstream input(filename);
     int temp;
-   
+    input>>std::hex;
     std::vector<int> v;
     while(input>>temp) v.push_back(temp);
     bubblesort(v);
     input.close();
-    std::ofstream of("bubble.out");
+    std::ofstream of("test_set.out");
+    of<<std::hex;
     for (int i:v){
         of<<i<<' ';
     }
