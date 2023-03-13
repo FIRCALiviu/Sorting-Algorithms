@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<string>
 using namespace std;
 void merge(vector<int> &v,int right, int  separator, int left){ // for merging arr[right ... separator] and arr[separator+1 ... left]
 vector<int> v1(v.begin()+right,v.begin()+separator+1),v2(v.begin()+separator+1,v.begin()+left+1);
@@ -43,13 +44,17 @@ void mergesort(vector<int>& v,int left, int right){
 }
 
 int main(){
-    ifstream input("test_set.in");
+    string filename;
+    cin>>filename;
+    ifstream input(filename);
+    input>>hex;
     vector<int> v;
     int temp;
     while(input>>temp) v.push_back(temp);
     sort(v.begin(),v.end());
     input.close();
     ofstream output("test_set.out");
+    output<<hex;
     for(int i:v) output<<i<<' ';
     output.close();
 }

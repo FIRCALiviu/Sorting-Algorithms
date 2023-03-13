@@ -2,6 +2,7 @@
 #include<vector>
 #include<algorithm>
 #include<iostream>
+#include<string>
 using namespace std;
 // void insertSort_h(vector<int>& v,int h,int begin){// performs an insertion sort on elements that are h apart.
 // for(int i=begin;i<v.size();i+=h){
@@ -42,13 +43,16 @@ for(int gap:gen_gaps(v)){
 
 }
 int main(){
-    ifstream inputf("test_set.in");
-
+    string filename;
+    cin>>filename;
+    ifstream inputf(filename);
+    inputf>>hex;
     vector<int> v;
     int temp;
     while(inputf>>temp)v.push_back(temp);
     shellsort(v);
     ofstream outputf("test_set.out");
-    for(int i:v) outputf<<i<<",";
+    outputf<<hex;
+    for(int i:v) outputf<<i<<' ';
     
 }

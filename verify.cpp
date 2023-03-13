@@ -3,7 +3,7 @@
 
 using namespace std;
 int main(){
-    ifstream verify("result.out");
+    ifstream verify("test_set.out");
     int right,left,temp;
     verify>>std::hex;
     verify>>right;

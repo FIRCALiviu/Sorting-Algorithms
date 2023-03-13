@@ -2,6 +2,7 @@
 #include<vector>
 #include<algorithm>
 #include<fstream>
+#include<string>
 using namespace std;
 
 int partition(vector<int> &v, int left, int right){
@@ -28,17 +29,20 @@ void quicksort(vector<int> &v,int left, int right){
 
 }
 int main(){
-    std::ifstream input("test_set.in");
+    string filename;
+    cin>>filename;
+    std::ifstream input(filename);
     int temp;
-    bool sorted=false;
+    input>>hex;
     std::vector<int> v;
     while(input>>temp) v.push_back(temp);
     quicksort(v,0,v.size()-1);
-    ofstream output("test_set.out");
+    ofstream output("test_set.ou");
+    output<<hex;
     for (int x:v){
         output<<x<<' ';
     }
-    cout<<"finished";
+    
    
     
 }

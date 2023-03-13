@@ -1,6 +1,7 @@
 #include<vector>
 #include <assert.h>
-
+#include<string>
+#include<iostream>
 #include<fstream>
 int max(const std::vector<int> & v){
     int k=v[0];
@@ -54,13 +55,17 @@ void radixsort_16(std::vector<int>& v)
 }
 
 int main(){
+    std::string filename;
+    std::cin>>filename;
     std::vector<int> v;
-    std::ifstream input_file("test_set.in");
+    std::ifstream input_file(filename);
+    input_file>>std::hex;
     int temp;
     while(input_file>>temp)v.push_back(temp);
 
     radixsort_16(v);
     std::ofstream output_file("test_set.out");
+    output_file<<std::hex;
     for(int i:v)output_file<<i<<' ';
 
 }

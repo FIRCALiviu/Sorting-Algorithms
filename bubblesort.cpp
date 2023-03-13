@@ -1,6 +1,8 @@
 #include<fstream>
+#include<iostream>
 #include<vector>
 #include<algorithm>
+#include<string>
 void bubblesort(std::vector<int>& v){
   for(int i=0;i<v.size();i++){
     for(int j=0;j<v.size()-1;j++){
@@ -11,7 +13,9 @@ void bubblesort(std::vector<int>& v){
   }
 }
 int main(){
-    std::ifstream input("test_set.in");
+    std::string filename;
+    std::cin>>filename;
+    std::ifstream input(filename);
     int temp;
    
     std::vector<int> v;

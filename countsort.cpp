@@ -1,5 +1,7 @@
 #include<fstream>
 #include<vector>
+#include<string>
+#include<iostream>
 int max(const std::vector<int> & v){
     int m=v[0];
     for(int i:v){
@@ -27,14 +29,17 @@ for(int i:copy){
 }
 
 int main(){
-std::ifstream input("test_set.in");
+    std::string filename;
+    std::cin>>filename;
+std::ifstream input(filename);
+input>>std::hex;
 int temp;
 std::vector<int> v;
 while(input>>temp) v.push_back(temp);
 input.close();
 countsort(v);
 std::ofstream output("test_set.out");
-
+output<<std::hex;
 for(int i:v)output<<i<<' '; 
 output.close();
 }
