@@ -37,7 +37,7 @@ int main(){
     std::vector<int> v;
     while(input>>temp) v.push_back(temp);
     quicksort(v,0,v.size()-1);
-    ofstream output("test_set.ou");
+    ofstream output("test_set.out");
     output<<hex;
     for (int x:v){
         output<<x<<' ';
