@@ -12,20 +12,20 @@ int max(const std::vector<int> & v){
 
 }
 
-int biggestPower0x(long long x){
+int biggestPower_65536(long long x){
     assert(x>=0);
     int counter=-1;
-    for(;x;counter++,x>>=4);
+    for(;x;counter++,x>>=16);
     return counter;  
 }
 void countsort(std::vector<int>& v,int power){ // we perform a countsort each step on the i-th digit of the number in base 16
-    std::vector<int> counting_table(16);
+    std::vector<int> counting_table(65536);
     std::vector<int> sorting_key;
     std::vector<int> copy_v=v;
     
     for(int i:v){
         i>>=power;
-        i=i&15;
+        i=i&65535;
         sorting_key.push_back(i);
         counting_table[i]++;
     }
@@ -43,29 +43,28 @@ void countsort(std::vector<int>& v,int power){ // we perform a countsort each st
     v=std::move(copy_v);
 }
 
-void radixsort_16(std::vector<int>& v)
+void radixsort_65536(std::vector<int>& v)
 {
     assert(v.size()>0);
     int biggest=max(v);
-    int inter=biggestPower0x(biggest)*4;
-    for(int power=0;power<=inter;power+=4){
+    int inter=biggestPower_65536(biggest)*16;
+    for(int power=0;power<=inter;power+=16){
         countsort(v,power);
     }
     
 }
 
-int main(){
-    std::string filename;
-    std::cin>>filename;
+int main(int argc, char* argv[]){
+    std::string filename(argv[1]);
+    std::ifstream input(filename);
     std::vector<int> v;
     std::ifstream input_file(filename);
     input_file>>std::hex;
     int temp;
     while(input_file>>temp)v.push_back(temp);
 
-    radixsort_16(v);
+    radixsort_65536(v);
     std::ofstream output_file("test_set.out");
     output_file<<std::hex;
     for(int i:v)output_file<<i<<' ';
-
 }

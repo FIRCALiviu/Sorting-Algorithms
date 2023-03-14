@@ -43,9 +43,9 @@ void mergesort(vector<int>& v,int left, int right){
     }
 }
 
-int main(){
-    string filename;
-    cin>>filename;
+int main(int argc, char* argv[]){
+    string filename(argv[1]);
+   
     ifstream input(filename);
     input>>hex;
     vector<int> v;
@@ -57,4 +57,6 @@ int main(){
     output<<hex;
     for(int i:v) output<<i<<' ';
     output.close();
+    cout<<v.size();
+    cout<<filename;
 }

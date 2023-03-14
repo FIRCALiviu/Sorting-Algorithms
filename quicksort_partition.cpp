@@ -28,9 +28,8 @@ void quicksort(vector<int> &v,int left, int right){
     }
 
 }
-int main(){
-    string filename;
-    cin>>filename;
+int main(int argc, char* argv[]){
+    string filename(argv[1]);
     std::ifstream input(filename);
     int temp;
     input>>hex;

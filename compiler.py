@@ -4,9 +4,10 @@ source=['bubblesort',
 'mergesort',
 'quicksort_median',
 'quicksort_partition',
-'radix_sort',
+'radix_sort_16',
 'shellsort',
-'verify']
+'verify',
+"radix_sort_65536"]
 for code in source:
     
     os.system("g++ {}.cpp -o {}.out".format(code,code))

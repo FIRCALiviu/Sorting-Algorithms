@@ -12,9 +12,8 @@ void bubblesort(std::vector<int>& v){
     }
   }
 }
-int main(){
-    std::string filename;
-    std::cin>>filename;
+int main(int argc, char* argv[]){
+    std::string filename(argv[1]);
     std::ifstream input(filename);
     int temp;
     input>>std::hex;
