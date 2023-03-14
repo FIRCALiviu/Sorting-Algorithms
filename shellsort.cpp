@@ -42,9 +42,9 @@ for(int gap:gen_gaps(v)){
 }
 
 }
-int main(){
-    string filename;
-    cin>>filename;
+int main(int argc, char* argv[]){
+    string filename(argv[1]);
+    std::ifstream input(filename);
     ifstream inputf(filename);
     inputf>>hex;
     vector<int> v;
