@@ -15,10 +15,9 @@ for algorithm in algorithms:
     for i in range(9):
         try:
             t1=time.perf_counter()
-            subprocess.run("timeout 125s {} test_set{}.in".format(algorithm,i+1),shell=True,timeout=120) # first time out the python code then the c++ code with shell command
+            subprocess.run("{} test_set{}.in".format(algorithm,i+1),shell=False,timeout=120) # first time out the python code then the c++ code with shell command
             
             t2=time.perf_counter()
-            time.sleep(7) # the pytohn code should wait for the c++ code to finish to have more ram
             verify=subprocess.run('./verify.out').returncode
             if verify!=0:
                 file.write("maxsize={} test_size={} failure\n".format(sizes[i%3],test_size[i//3]))
