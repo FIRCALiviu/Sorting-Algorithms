@@ -57,6 +57,4 @@ int main(int argc, char* argv[]){
     output<<hex;
     for(int i:v) output<<i<<' ';
     output.close();
-    cout<<v.size();
-    cout<<filename;
 }

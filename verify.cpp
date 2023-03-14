@@ -11,11 +11,10 @@ int main(){
     while(verify>>left){
         if(right>left){
             
-            cout<<"error\n";
-            return 0;
+            return EXIT_FAILURE;
         }
         right=left;
     }
     
-    cout<<"sorted\n";
+    return EXIT_SUCCESS;
 }
