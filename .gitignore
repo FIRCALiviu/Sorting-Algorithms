@@ -1,6 +1,7 @@
 *.in
 *.out
-.vscode
-foo.py
 *.json
+/.vscode/
+foo.py
+
 *.pdf
