@@ -18,7 +18,7 @@ int biggestPower_65536(long long x){
     for(;x;counter++,x>>=16);
     return counter;  
 }
-void countsort(std::vector<int>& v,int power){ // we perform a countsort each step on the i-th digit of the number in base 16
+void countsort(std::vector<int>& v,int power){ // we perform a countsort each step on the i-th digit of the number in base 2^16
     std::vector<int> counting_table(65536);
     std::vector<int> sorting_key;
     std::vector<int> copy_v=v;
@@ -45,7 +45,7 @@ void countsort(std::vector<int>& v,int power){ // we perform a countsort each st
 
 void radixsort_65536(std::vector<int>& v)
 {
-    assert(v.size()>0);
+    assert(v.size()>0);//just in case something terrible happens
     int biggest=max(v);
     int inter=biggestPower_65536(biggest)*16;
     for(int power=0;power<=inter;power+=16){
