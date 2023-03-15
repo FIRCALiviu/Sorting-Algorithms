@@ -3,7 +3,7 @@
 #include<vector>
 #include<algorithm>
 #include<string>
-bool bubblesort(std::vector<int>& v){
+void bubblesort(std::vector<int>& v){
   for(int i=0;i<v.size();i++){
     for(int j=0;j<v.size()-1;j++){
       if (v[j]>v[j+1]){

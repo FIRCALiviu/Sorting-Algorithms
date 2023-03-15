@@ -6,7 +6,8 @@ algorithms=['./bubblesort.out',
 './quicksort_partition.out',
 './radix_sort_16.out',
 './shellsort.out',
-'./radix_sort_65536.out']
+'./radix_sort_65536.out',
+'./STLsort.out']
 test_size=[10**3,10**6,10**8]
 sizes=[10**3,10**6,10**8]
 file=open("results.txt",'w')

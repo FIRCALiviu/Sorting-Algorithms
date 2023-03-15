@@ -9,8 +9,11 @@ int max(const std::vector<int> & v){
     }
     return m;
 }
-void countsort(std::vector<int> & v){
+int countsort(std::vector<int> & v){
 int biggest_num=max(v);
+if(biggest_num>500000000){
+    return -1;
+}
 std::vector<int> count_table(biggest_num+1);
 for(int i:v) count_table[i]++;
 for(int i=1;i<count_table.size();i++){
@@ -25,7 +28,7 @@ for(int i:copy){
     v[count_table[i]]=i;
     count_table[i]++;
 }
-
+return 0;
 }
 
 int main(int argc, char* argv[]){
@@ -36,9 +39,13 @@ int temp;
 std::vector<int> v;
 while(input>>temp) v.push_back(temp);
 input.close();
-countsort(v);
+int failure=countsort(v);
+if(failure==-1){
+    return EXIT_FAILURE;
+}
 std::ofstream output("test_set.out");
 output<<std::hex;
 for(int i:v)output<<i<<' '; 
 output.close();
+return EXIT_SUCCESS;
 }
