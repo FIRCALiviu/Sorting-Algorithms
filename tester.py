@@ -15,9 +15,11 @@ for algorithm in algorithms:
     file.write(algorithm+'\n')
     for i in range(9):
         try:
-            t1=time.perf_counter()
-            subprocess.run([algorithm,"test_set{}.in".format(i+1)] ,shell=False,timeout=200) # first time out the python code then the c++ code with shell command
             
+            if (i//3)==0:
+                subprocess.run([algorithm,"test_set{}.in".format(i+1)] ,shell=False,timeout=200) # we run the program twice on small training set in order to counter lru cache bias
+            t1=time.perf_counter()
+            subprocess.run([algorithm,"test_set{}.in".format(i+1)] ,shell=False,timeout=200)
             t2=time.perf_counter()
             verify=subprocess.run('./verify.out').returncode
             if verify!=0:
