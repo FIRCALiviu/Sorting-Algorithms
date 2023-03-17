@@ -16,7 +16,7 @@ int median3(vector<int> &v,int left, int right){ // algorithm provided by https:
 }
 
 
-int partition(vector<int> &v, int left, int right){
+int partition(vector<int> &v, int left, int right){//lomuto's partitioning scheme
 int i=left-1,pivot=median3(v,left,right);
 
 for ( int j=left;j<right;j++){ 

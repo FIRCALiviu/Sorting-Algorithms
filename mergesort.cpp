@@ -51,8 +51,8 @@ int main(int argc, char* argv[]){
     vector<int> v;
     int temp;
     while(input>>temp) v.push_back(temp);
-    mergesort(v,0,v.size()-1);
     input.close();
+    mergesort(v,0,v.size()-1);
     ofstream output("test_set.out");
     output<<hex;
     for(int i:v) output<<i<<' ';

@@ -4,7 +4,7 @@ algorithms=data.read().split("./")
 del algorithms[0]
 fig=plt.figure()
 image=fig.add_subplot(1,1,1)
-size=10**8
+size=10**6
 colors=[
 'b' ,
 'g' ,
@@ -30,7 +30,7 @@ for j,algorithm in enumerate(algorithms):
         maxsize=int(words[0].split('=')[1])
         array_size=int(words[1].split("=")[1])
         if words[2]=='timeout':
-            time=float(5000) # we cap the data at 5000
+            time=float(5000) # we assume it takes quite a lot
         else:
             time=float(words[2])
         if maxsize==size:

@@ -8,7 +8,8 @@ int main(){
     verify>>std::hex;
     verify>>right;
     bool sorted;
-    while(verify>>left){
+    while(verify>>left){ // we assume the algorithm preserved all the numbers of the vector and has outputed all of it in the file
+                         // the algoritms were manually checked for such behaviour   
         if(right>left){
             
             return EXIT_FAILURE;

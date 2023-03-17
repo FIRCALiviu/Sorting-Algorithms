@@ -4,20 +4,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
-// void insertSort_h(vector<int>& v,int h,int begin){// performs an insertion sort on elements that are h apart.
-// for(int i=begin;i<v.size();i+=h){
-// for(int j=i;j>=h and v[j]<v[j-h];j-=h){
-//     swap(v[j],v[j-h]);
-// }
-// }
-// }
-// void shellsort(vector<int>& v){ //this algorithm is just slower than the other implementation
-    // for(int h=v.size()/2;h>0;h/=2){
-    //     for(int i=0;i<h;i++){
-    //         insertSort_h(v,h,i);
-    //     }
-    // }
-// }
+
 inline vector<int> gen_gaps(const vector<int>& v){
 vector<int> gaps;
 int gap=1;
