@@ -30,7 +30,7 @@ for j,algorithm in enumerate(algorithms):
         maxsize=int(words[0].split('=')[1])
         array_size=int(words[1].split("=")[1])
         if words[2]=='timeout':
-            time=float(500) # we cap the data at 500
+            time=float(5000) # we cap the data at 5000
         else:
             time=float(words[2])
         if maxsize==size:
